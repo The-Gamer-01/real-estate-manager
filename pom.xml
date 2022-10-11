@@ -6,6 +6,7 @@
     <inceptionYear>2022</inceptionYear>
     <modules>
         <module>manager-common</module>
+        <module>manage-gateway</module>
     </modules>
     
     <groupId>com.hyx</groupId>
