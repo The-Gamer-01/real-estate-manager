@@ -7,6 +7,7 @@
     <modules>
         <module>manager-common</module>
         <module>manage-gateway</module>
+        <module>manager-hourse</module>
     </modules>
     
     <groupId>com.hyx</groupId>
