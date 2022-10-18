@@ -8,6 +8,8 @@ import com.hyx.entity.HouseInfo;
 import java.util.List;
 
 /**
+ * House Service.
+ *
  * @author hyx
  **/
 

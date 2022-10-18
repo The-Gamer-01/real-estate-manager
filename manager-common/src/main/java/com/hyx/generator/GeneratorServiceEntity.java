@@ -9,27 +9,30 @@ import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 /**
+ * MyBatis-Plus Generator.
+ *
  * @author hyx
  **/
 
 public class GeneratorServiceEntity {
     
-    private final static String dbUrl = "jdbc:mysql://127.0.0.1:3306/real_estate_manager?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8";
+    private static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/real_estate_manager?useSSL=false&allowPublicKeyRetrieval=true&"
+            + "useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8";
     
-    private final static String username = "root";
+    private static final String USERNAME = "root";
     
-    private final static String password = "huangyixuan";
+    private static final String PASSWORD = "huangyixuan";
     
-    private final static String driverName = "com.mysql.jdbc.Driver";
+    private static final String DRIVER_NAME = "com.mysql.jdbc.Driver";
     
     private static void generateByTables(String packageName, String[] tableNames) {
         GlobalConfig config = new GlobalConfig();
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
         dataSourceConfig.setDbType(DbType.MYSQL)
-                .setUrl(dbUrl)
-                .setUsername(username)
-                .setPassword(password)
-                .setDriverName(driverName);
+                .setUrl(DB_URL)
+                .setUsername(USERNAME)
+                .setPassword(PASSWORD)
+                .setDriverName(DRIVER_NAME);
         StrategyConfig strategyConfig = new StrategyConfig();
         strategyConfig.setCapitalMode(true)
                 .setEntityLombokModel(true)

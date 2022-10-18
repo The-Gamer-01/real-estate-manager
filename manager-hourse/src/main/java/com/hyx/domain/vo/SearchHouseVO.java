@@ -3,6 +3,8 @@ package com.hyx.domain.vo;
 import lombok.Data;
 
 /**
+ * 搜索VO.
+ *
  * @author hyx
  **/
 
