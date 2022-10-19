@@ -41,7 +41,7 @@ public class GeneratorServiceEntity {
         config.setActiveRecord(false)
                 .setAuthor("hyx")
                 .setOutputDir(".\\manager-common\\src\\main\\java")
-                .setFileOverride(true);
+                .setFileOverride(false);
         AutoGenerator autoGenerator = new AutoGenerator();
         autoGenerator.setGlobalConfig(config)
                 .setDataSource(dataSourceConfig)

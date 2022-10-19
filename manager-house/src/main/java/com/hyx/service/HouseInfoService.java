@@ -4,6 +4,8 @@ import com.hyx.domain.vo.CreateHouseVO;
 import com.hyx.domain.vo.HouseInfoVO;
 import com.hyx.domain.vo.SearchHouseVO;
 import com.hyx.entity.HouseInfo;
+import com.hyx.page.IPage;
+import com.hyx.page.Page;
 
 import java.util.List;
 
@@ -42,4 +44,6 @@ public interface HouseInfoService {
      * @return 房屋信息列表.
      */
     List<HouseInfoVO> searchHouse(SearchHouseVO searchHouseVO);
+    
+    IPage<HouseInfoVO> getHouseInfoList(Page page);
 }

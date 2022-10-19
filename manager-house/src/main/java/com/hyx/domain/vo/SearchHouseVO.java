@@ -10,6 +10,7 @@ import lombok.Data;
 
 @Data
 public class SearchHouseVO {
+    
     private String text;
     
     private Long lowValue;

@@ -5,6 +5,8 @@ import com.hyx.domain.vo.HouseInfoVO;
 import com.hyx.domain.vo.SearchHouseVO;
 import com.hyx.entity.HouseInfo;
 import com.hyx.mapper.HouseInfoMapper;
+import com.hyx.page.IPage;
+import com.hyx.page.Page;
 import com.hyx.service.HouseInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,5 +52,19 @@ public class HouseInfoServiceImpl implements HouseInfoService {
     @Override
     public List<HouseInfoVO> searchHouse(SearchHouseVO searchHouseVO) {
         return null;
+    }
+    
+    @Override
+    public IPage<HouseInfoVO> getHouseInfoList(Page page) {
+        IPage<HouseInfoVO> result = new IPage<>();
+        
+        List<HouseInfoVO> houses = houseInfoMapper.getHouseInfoList(page);
+        Integer total = houseInfoMapper.selectTotal();
+        
+        result.setPageNo(page.getPageNo());
+        result.setPageSize(page.getPageSize());
+        result.setRecords(houses);
+        result.setTotal(total);
+        return result;
     }
 }
