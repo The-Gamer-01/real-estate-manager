@@ -13,3 +13,6 @@ spring:
 mybatis-plus:
   mapper-locations:
     - classpath:xml/*.xml
+logging:
+  level:
+    com.hyx.mapper: debug

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hyx.mapper.HouseInfoMapper">
-    
+    <insert id="createHouse">
+        INSERT
+            house_info(title, `type`, size, layout, towards, estate, floor, price, detail, intro, create_time)
+        VALUES
+            (#{createHouseVO.title}, #{createHouseVO.type}, #{createHouseVO.size},
+            #{createHouseVO.layout}, #{createHouseVO.towards}, #{createHouseVO.estate}, #{createHouseVO.floor}, #{createHouseVO.price},
+            #{createHouseVO.detail}, #{createHouseVO.intro}, NOW())
+    </insert>
     <select
         id="getHouse"
         resultType="com.hyx.entity.HouseInfo">
@@ -10,11 +17,21 @@
     <select
         id="getHouseInfoList"
         resultType="com.hyx.domain.vo.HouseInfoVO">
-        SELECT img, title, create_time, price FROM house_info LIMIT #{page.pageNo}, #{page.pageSize}
+        SELECT id, img, title, create_time, price, size, layout, towards, estate, floor FROM house_info LIMIT #{page.pageNo}, #{page.pageSize}
     </select>
     <select
         id="selectTotal"
         resultType="java.lang.Integer">
         SELECT COUNT(*) FROM house_info
+    </select>
+    <select
+        id="getHouseDetail"
+        resultType="com.hyx.domain.vo.HouseInfoVO">
+        SELECT
+            title, `type`, size, layout, towards, estate, floor, price, detail, intro, create_time, owner_id
+        FROM
+            house_info
+        WHERE
+            id = #{id}
     </select>
 </mapper>

@@ -2,6 +2,7 @@ package com.hyx.controller;
 
 import com.hyx.common.CommonCode;
 import com.hyx.domain.vo.CreateHouseVO;
+import com.hyx.domain.vo.HouseDetailVO;
 import com.hyx.domain.vo.HouseInfoVO;
 import com.hyx.domain.vo.SearchHouseVO;
 import com.hyx.entity.HouseInfo;
@@ -27,18 +28,17 @@ import java.util.List;
  **/
 
 @RestController
-@RequestMapping("/")
 public class HouseController {
     
     @Autowired
     private HouseInfoService houseInfoService;
     
-    @GetMapping("/{id}")
-    public HouseInfo getHouse(@PathVariable String id) {
+    @GetMapping("/detail")
+    public HouseDetailVO getHouse(@RequestParam String id) {
         return houseInfoService.getHouse(Long.parseLong(id));
     }
     
-    @PostMapping("/")
+    @PostMapping("/create")
     public boolean createHouse(CreateHouseVO createHouseVO) {
         return houseInfoService.createHouse(createHouseVO);
     }

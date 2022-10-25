@@ -1,6 +1,7 @@
 package com.hyx.service;
 
 import com.hyx.domain.vo.CreateHouseVO;
+import com.hyx.domain.vo.HouseDetailVO;
 import com.hyx.domain.vo.HouseInfoVO;
 import com.hyx.domain.vo.SearchHouseVO;
 import com.hyx.entity.HouseInfo;
@@ -22,7 +23,7 @@ public interface HouseInfoService {
      * @param id 房屋编号.
      * @return 房屋信息
      */
-    HouseInfo getHouse(long id);
+    HouseDetailVO getHouse(long id);
     
     /**
      * 创建房屋信息.

@@ -1,5 +1,6 @@
 package com.hyx.mapper;
 
+import com.hyx.domain.vo.CreateHouseVO;
 import com.hyx.domain.vo.HouseInfoVO;
 import com.hyx.entity.HouseInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
@@ -28,4 +29,8 @@ public interface HouseInfoMapper extends BaseMapper<HouseInfo> {
     Integer selectTotal();
     
     List<HouseInfoVO> getHouseInfoList(@Param("page") Page page);
+    
+    Long createHouse(@Param("createHouseVO") CreateHouseVO createHouseVO);
+    
+    HouseInfoVO getHouseDetail(@Param("id") long id);
 }

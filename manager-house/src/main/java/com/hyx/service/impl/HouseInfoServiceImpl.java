@@ -1,9 +1,10 @@
 package com.hyx.service.impl;
 
 import com.hyx.domain.vo.CreateHouseVO;
+import com.hyx.domain.vo.HouseDetailVO;
 import com.hyx.domain.vo.HouseInfoVO;
+import com.hyx.domain.vo.HouseOwnerData;
 import com.hyx.domain.vo.SearchHouseVO;
-import com.hyx.entity.HouseInfo;
 import com.hyx.mapper.HouseInfoMapper;
 import com.hyx.page.IPage;
 import com.hyx.page.Page;
@@ -26,16 +27,28 @@ public class HouseInfoServiceImpl implements HouseInfoService {
     private HouseInfoMapper houseInfoMapper;
     
     @Override
-    public HouseInfo getHouse(long id) {
-        return houseInfoMapper.getHouse(id);
+    public HouseDetailVO getHouse(long id) {
+        HouseInfoVO houseInfo = houseInfoMapper.getHouseDetail(id);
+        
+        HouseOwnerData houseOwnerData = new HouseOwnerData();
+        houseOwnerData.setEmail("TEST@163.com");
+        houseOwnerData.setIntro("简介");
+        houseOwnerData.setTel("123");
+        houseOwnerData.setUsername("hyx");
+        houseOwnerData.setId(1L);
+        
+        HouseDetailVO houseDetailVO = new HouseDetailVO();
+        houseDetailVO.setHouse(houseInfo);
+        houseDetailVO.setUser(houseOwnerData);
+        return houseDetailVO;
     }
     
     @Override
     public boolean createHouse(CreateHouseVO createHouseVO) {
-        Byte type = createHouseVO.getType();
+        Integer type = createHouseVO.getType();
         if (type == 1) {
             //二手房
-            
+            houseInfoMapper.createHouse(createHouseVO);
         } else if (type == 2) {
             //租房
             

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyx.mapper.UserWatchHouseMapper">
+    <insert id="createWatchStatus">
+        INSERT INTO
+            user_watch_house(user_id, house_id, status, create_time, update_time)
+        VALUES
+            (#{userId}, #{houseId}, #{status}, NOW(), NOW())
+    </insert>
+    
+    <update id="changeWatchStatus">
+        UPDATE
+            user_watch_house
+        SET
+            status = #{status}
+        WHERE
+            user_id = #{userId}
+        AND
+            house_id = #{houseId}
+        AND
+            update_time = NOW()
+    </update>
+    <select
+        id="selectCount"
+        resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM user_watch_house LIMIT 1
+    </select>
+</mapper>
