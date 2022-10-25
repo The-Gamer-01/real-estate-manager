@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.StrategyConfig;
+import com.baomidou.mybatisplus.generator.config.TemplateConfig;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 /**
@@ -26,8 +27,15 @@ public class GeneratorServiceEntity {
     private static final String DRIVER_NAME = "com.mysql.jdbc.Driver";
     
     private static void generateByTables(String packageName, String[] tableNames) {
-        GlobalConfig config = new GlobalConfig();
-        DataSourceConfig dataSourceConfig = new DataSourceConfig();
+        final GlobalConfig config = new GlobalConfig();
+        final DataSourceConfig dataSourceConfig = new DataSourceConfig();
+        TemplateConfig templateConfig = new TemplateConfig();
+        templateConfig.setXml(null);
+        // 不生成controller
+        templateConfig.setController("");
+        // 不生成service
+        templateConfig.setService("");
+        templateConfig.setServiceImpl("");
         dataSourceConfig.setDbType(DbType.MYSQL)
                 .setUrl(DB_URL)
                 .setUsername(USERNAME)
@@ -41,7 +49,7 @@ public class GeneratorServiceEntity {
         config.setActiveRecord(false)
                 .setAuthor("hyx")
                 .setOutputDir(".\\manager-common\\src\\main\\java")
-                .setFileOverride(false);
+                .setFileOverride(true);
         AutoGenerator autoGenerator = new AutoGenerator();
         autoGenerator.setGlobalConfig(config)
                 .setDataSource(dataSourceConfig)
@@ -49,14 +57,13 @@ public class GeneratorServiceEntity {
                 .setPackageInfo(
                         new PackageConfig()
                         .setParent(packageName)
-                );
+                ).setTemplate(templateConfig);
         autoGenerator.execute();
     }
     
     public static void main(String[] args) {
         String packageName = "com.hyx";
         String[] tableNames = new String[] {
-                "user_info",
                 "house_info"
         };
         generateByTables(packageName, tableNames);

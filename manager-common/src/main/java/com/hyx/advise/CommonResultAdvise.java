@@ -28,7 +28,6 @@ public class CommonResultAdvise implements ResponseBodyAdvice<Object> {
      */
     @ExceptionHandler(value = Exception.class)
     public CommonResult exceptionHandler(Exception exception) {
-        exception.printStackTrace();
         if (exception instanceof SimpleException) {
             return CommonResult.failed(exception.getMessage(), null);
         } else {

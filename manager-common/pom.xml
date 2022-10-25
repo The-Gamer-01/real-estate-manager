@@ -58,6 +58,17 @@
             <artifactId>velocity-engine-core</artifactId>
             <version>${velocity-engine-core.version}</version>
         </dependency>
+        <!--utils-->
+        <dependency>
+            <groupId>com.hyx</groupId>
+            <artifactId>manager-utils</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!--openfeign-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
