@@ -8,6 +8,9 @@
         <module>manager-common</module>
         <module>manage-gateway</module>
         <module>manager-house</module>
+        <module>manager-back</module>
+        <module>manager-users</module>
+        <module>manager-utils</module>
     </modules>
     
     <groupId>com.hyx</groupId>
@@ -72,6 +75,7 @@
                     <encoding>UTF-8</encoding>
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>true</failsOnError>
+                    <excludes>**/entity/**</excludes>
                 </configuration>
                 <executions>
                     <execution>
