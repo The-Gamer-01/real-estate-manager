@@ -6,6 +6,8 @@ import com.hyx.page.Page;
 import java.util.List;
 
 /**
+ * 关注Service.
+ *
  * @author hyx
  **/
 

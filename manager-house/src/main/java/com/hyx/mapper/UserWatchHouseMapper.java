@@ -4,6 +4,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 /**
+ * 关注房屋相关Mapper.
+ *
  * @author hyx
  **/
 

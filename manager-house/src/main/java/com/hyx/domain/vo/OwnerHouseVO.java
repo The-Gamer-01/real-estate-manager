@@ -4,6 +4,8 @@ import com.hyx.page.Page;
 import lombok.Data;
 
 /**
+ * 房屋类.
+ *
  * @author hyx
  **/
 

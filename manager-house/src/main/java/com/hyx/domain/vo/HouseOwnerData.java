@@ -1,10 +1,10 @@
 package com.hyx.domain.vo;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
+ * 房屋主相关信息.
+ *
  * @author hyx
  **/
 

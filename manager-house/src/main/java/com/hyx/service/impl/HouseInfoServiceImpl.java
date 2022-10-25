@@ -28,7 +28,7 @@ public class HouseInfoServiceImpl implements HouseInfoService {
     
     @Override
     public HouseDetailVO getHouse(long id) {
-        HouseInfoVO houseInfo = houseInfoMapper.getHouseDetail(id);
+        final HouseInfoVO houseInfo = houseInfoMapper.getHouseDetail(id);
         
         HouseOwnerData houseOwnerData = new HouseOwnerData();
         houseOwnerData.setEmail("TEST@163.com");

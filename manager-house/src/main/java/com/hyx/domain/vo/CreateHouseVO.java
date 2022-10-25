@@ -19,62 +19,62 @@ import java.time.LocalDateTime;
 public class CreateHouseVO {
     
     /**
-     * 住房名
+     * 住房名.
      */
     private String title;
     
     /**
-     * 住房类型
+     * 住房类型.
      */
     private Integer type;
     
     /**
-     * 详细地址
+     * 详细地址.
      */
     private String address;
     
     /**
-     * 房型
+     * 房型.
      */
     private String layout;
     
     /**
-     * 朝向
+     * 朝向.
      */
     private String towards;
     
     /**
-     * 校区名称
+     * 校区名称.
      */
     private String estate;
     
     /**
-     * 所在楼层
+     * 所在楼层.
      */
     private String floor;
     
     /**
-     * 房屋价格(万)
+     * 房屋价格(万).
      */
     private BigDecimal price;
     
     /**
-     * 房屋面积（平方）
+     * 房屋面积（平方）.
      */
     private Double size;
     
     /**
-     * 房屋简介
+     * 房屋简介.
      */
     private String intro;
     
     /**
-     * 详细信息
+     * 详细信息.
      */
     private String detail;
     
     /**
-     * 创建时间
+     * 创建时间.
      */
     private LocalDateTime createTime;
 }

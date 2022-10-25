@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
+ * 房屋主相关信息Controller.
+ *
  * @author hyx
  **/
 
